@@ -1,0 +1,28 @@
+{
+  "name": "alex-oliveira/ao-alert",
+  "homepage": "http://github.com/alex-oliveira/ao-alert",
+  "description": "Resources for ALERTS with Laravel 5.1",
+  "license": "MIT",
+  "keywords": [
+    "alex-oliveira",
+    "laravel",
+    "alert"
+  ],
+  "authors": [
+    {
+      "name": "Alex Oliveira",
+      "email": "bsi.alexoliveira@gmail.com",
+      "homepage": "http://alexdeoliveira.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "laravel/framework": "5.1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "AoAlert\\": "src/"
+    }
+  }
+}
