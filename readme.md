@@ -25,7 +25,7 @@ $ composer require alex-oliveira/ao-alert:dev-master
 ## 3) Using
 Showing alerts in your template or view.
 ````
-{!! alert()->show()->cls() !!}
+{!! alert()->show() !!}
 ````
 
 Add new messages in session.
