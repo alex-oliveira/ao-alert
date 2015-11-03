@@ -28,8 +28,6 @@ class Alert
 
     /**
      * Print the default HTML of message list.
-     *
-     * @return self;
      */
     public function show()
     {
@@ -47,8 +45,8 @@ class Alert
 
             echo '</div>';
         }
-
-        return $this;
+        
+        $this->cls();
     }
 
     /**
