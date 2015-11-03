@@ -1,5 +1,5 @@
 # Ao-Alert
-Resources for Alerts with Laravel 5.1
+Resources for Alerts with Laravel 5.1 + Bootstrap 3
 
 ## 1) Installation
 ````
