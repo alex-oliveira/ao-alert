@@ -22,28 +22,37 @@ $ composer require alex-oliveira/ao-alert:dev-master
 ],
 ````
 
-## 3) Template
+## 3) Using
+Showing alerts in your template or view.
 ````
 {!! alert()->show()->cls() !!}
 ````
 
-# Using
-Get message list of session
+Add new messages in session.
 ````
-Alert::get()
-// equals
-alert()->get();
-````
-
-Add new messages in session
-````
-alert()->info('info message');
-alert()->success('success message');
-alert()->warning('warning message');
-alert()->danger('danger message');
+alert()->info('message');
+alert()->success('message');
+alert()->warning('message');
+alert()->danger('message');
 ````
 
-Add message with topic list
+Add multiple messages.
 ````
-alert()->danger('message')->success(['topic a', 'topic b', 'topic c']);
+alert()->info(['message a', 'message b', 'message c']);
+````
+
+Add message with multiple topics.
+````
+alert()->danger('message', ['topic a', 'topic b', 'topic c']);
+````
+
+Add new custom messages in session.
+````
+/* CSS */
+.alert-custom{
+    background: #ccc
+}
+
+/* PHP */
+alert()->add('alert-custom', 'message');
 ````
