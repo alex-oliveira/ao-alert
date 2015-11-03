@@ -33,10 +33,20 @@ class Alert
      */
     public function show()
     {
-        foreach ($this->get()->all() as $alert)
-            echo '<div class="alert ' . $alert->type . '">
-                  <button class="close" data-dismiss="alert"><span>&times;</span></button>
-                  <span>' . $alert->message . '</span></div>';
+        foreach ($this->get()->all() as $alert) {
+            echo '<div class="alert ' . $alert->type . '">';
+            echo '<button class="close" data-dismiss="alert"><span>&times;</span></button>';
+            echo '<span>' . $alert->message . '</span>';
+
+            if (!empty($alert->details)) {
+                echo '<br/><br/><ul>';
+                foreach ($alert->details as $detail)
+                    echo '<li>' . $detail . '</li>';
+                echo '</ul>';
+            }
+
+            echo '</div>';
+        }
 
         return $this;
     }
@@ -46,15 +56,16 @@ class Alert
      *
      * @param string $type
      * @param string|array $message
+     * @param array $details
      * @return self;
      */
-    public function add($type, $message)
+    public function add($type, $message, array $details = null)
     {
         if (is_array($message)) {
             foreach ($message as $msn)
                 $this->get()->push((object)['type' => $type, 'message' => $msn]);
         } else {
-            $this->get()->push((object)['type' => $type, 'message' => $message]);
+            $this->get()->push((object)['type' => $type, 'message' => $message, 'details' => $details]);
         }
 
         return $this;
@@ -64,11 +75,12 @@ class Alert
      * Add a new info message in session.
      *
      * @param string|array $message
+     * @param array $details
      * @return self;
      */
-    public function info($message)
+    public function info($message, array $details = null)
     {
-        $this->add('alert-info', $message);
+        $this->add('alert-info', $message, $details);
         return $this;
     }
 
@@ -76,11 +88,12 @@ class Alert
      * Add a new success message in session.
      *
      * @param string|array $message
+     * @param array $details
      * @return self;
      */
-    public function success($message)
+    public function success($message, array $details = null)
     {
-        $this->add('alert-success', $message);
+        $this->add('alert-success', $message, $details);
         return $this;
     }
 
@@ -88,11 +101,12 @@ class Alert
      * Add a new warning message in session.
      *
      * @param string|array $message
+     * @param array $details
      * @return self;
      */
-    public function warning($message)
+    public function warning($message, array $details = null)
     {
-        $this->add('alert-warning', $message);
+        $this->add('alert-warning', $message, $details);
         return $this;
     }
 
@@ -100,11 +114,12 @@ class Alert
      * Add a new danger message in session.
      *
      * @param string|array $message
+     * @param array $details
      * @return self;
      */
-    public function danger($message)
+    public function danger($message, array $details = null)
     {
-        $this->add('alert-danger', $message);
+        $this->add('alert-danger', $message, $details);
         return $this;
     }
 
