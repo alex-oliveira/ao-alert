@@ -3,7 +3,7 @@ Resources for Alerts with Laravel 5.1 + Bootstrap 3
 
 ## 1) Installation
 ````
-$ composer require alex-oliveira/ao-alert:dev-master
+$ composer require alex-oliveira/ao-alert
 ````
 
 ## 2) config/app.php
