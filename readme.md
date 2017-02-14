@@ -16,7 +16,7 @@ $ composer require alex-oliveira/ao-alert
 ],
 'aliases' => [
     /*
-     * Vendors Facades
+     * Vendors Facades...
      */
     'Alert' => AoAlert\AlertFacade::class,
 ],

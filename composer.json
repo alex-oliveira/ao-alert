@@ -1,24 +1,19 @@
 {
   "name": "alex-oliveira/ao-alert",
   "homepage": "http://github.com/alex-oliveira/ao-alert",
-  "description": "Resources for Alerts with Laravel 5.1 + Bootstrap 3",
+  "description": "Resources for Alerts with Laravel 5.* + Bootstrap 3",
   "license": "MIT",
-  "keywords": [
-    "alex-oliveira",
-    "laravel",
-    "alert"
-  ],
+  "keywords": ["alex-oliveira", "laravel", "alert"],
   "authors": [
     {
       "name": "Alex Oliveira",
-      "email": "bsi.alexoliveira@gmail.com",
-      "homepage": "http://alexdeoliveira.com",
+      "homepage": "https://github.com/alex-oliveira",
       "role": "Developer"
     }
   ],
   "require": {
     "php": ">=5.5.9",
-    "laravel/framework": "5.1.*"
+    "laravel/framework": "5.*"
   },
   "autoload": {
     "psr-4": {
